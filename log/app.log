@@ -1,0 +1,94 @@
+2022-03-09 20:02:08.097  INFO 19624 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Starting ApiForShopApplication using Java 15.0.1 on DESKTOP-SKH4LEI with PID 19624 (C:\Users\vladb\IdeaProjects\apiForShop\target\classes started by vladb in C:\Users\vladb\IdeaProjects\apiForShop)
+2022-03-09 20:02:08.099  INFO 19624 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-03-09 20:02:08.151  INFO 19624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-09 20:02:08.152  INFO 19624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-09 20:02:08.908  INFO 19624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-03-09 20:02:08.915  INFO 19624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-09 20:02:08.915  INFO 19624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-09 20:02:08.980  INFO 19624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-09 20:02:08.981  INFO 19624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 817 ms
+2022-03-09 20:02:09.228  WARN 19624 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-03-09 20:02:09.276  INFO 19624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-09 20:02:09.306  INFO 19624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-03-09 20:02:09.315  INFO 19624 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Started ApiForShopApplication in 1.543 seconds (JVM running for 2.084)
+2022-03-09 20:04:49.582  INFO 19484 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Starting ApiForShopApplication using Java 15.0.1 on DESKTOP-SKH4LEI with PID 19484 (C:\Users\vladb\IdeaProjects\apiForShop\target\classes started by vladb in C:\Users\vladb\IdeaProjects\apiForShop)
+2022-03-09 20:04:49.584  INFO 19484 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-03-09 20:04:49.623  INFO 19484 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-09 20:04:49.623  INFO 19484 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-09 20:04:50.372  INFO 19484 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-03-09 20:04:50.378  INFO 19484 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-09 20:04:50.380  INFO 19484 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-09 20:04:50.447  INFO 19484 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-09 20:04:50.447  INFO 19484 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 823 ms
+2022-03-09 20:04:50.750  WARN 19484 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-03-09 20:04:50.795  INFO 19484 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-09 20:04:50.822  INFO 19484 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-03-09 20:04:50.831  INFO 19484 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Started ApiForShopApplication in 1.583 seconds (JVM running for 2.192)
+2022-03-09 20:05:04.627  INFO 19484 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-09 20:05:04.628  INFO 19484 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-09 20:05:04.628  INFO 19484 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-03-09 20:14:18.160  INFO 20068 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Starting ApiForShopApplication using Java 15.0.1 on DESKTOP-SKH4LEI with PID 20068 (C:\Users\vladb\IdeaProjects\apiForShop\target\classes started by vladb in C:\Users\vladb\IdeaProjects\apiForShop)
+2022-03-09 20:14:18.161  INFO 20068 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-03-09 20:14:18.211  INFO 20068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-09 20:14:18.212  INFO 20068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-09 20:14:19.062  INFO 20068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-03-09 20:14:19.071  INFO 20068 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-09 20:14:19.071  INFO 20068 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-09 20:14:19.156  INFO 20068 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-09 20:14:19.157  INFO 20068 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 945 ms
+2022-03-09 20:14:19.444  WARN 20068 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-03-09 20:14:19.497  INFO 20068 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-09 20:14:19.528  INFO 20068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-03-09 20:14:19.537  INFO 20068 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Started ApiForShopApplication in 1.667 seconds (JVM running for 2.418)
+2022-03-09 20:14:21.596  INFO 20068 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-09 20:14:21.596  INFO 20068 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-09 20:14:21.597  INFO 20068 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-09 20:18:04.716  INFO 19708 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Starting ApiForShopApplication using Java 15.0.1 on DESKTOP-SKH4LEI with PID 19708 (C:\Users\vladb\IdeaProjects\apiForShop\target\classes started by vladb in C:\Users\vladb\IdeaProjects\apiForShop)
+2022-03-09 20:18:04.717  INFO 19708 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-03-09 20:18:04.776  INFO 19708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-09 20:18:04.776  INFO 19708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-09 20:18:05.601  INFO 19708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-03-09 20:18:05.608  INFO 19708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-09 20:18:05.609  INFO 19708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-09 20:18:05.678  INFO 19708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-09 20:18:05.679  INFO 19708 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 901 ms
+2022-03-09 20:18:05.954  WARN 19708 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-03-09 20:18:06.004  INFO 19708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-09 20:18:06.031  INFO 19708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-03-09 20:18:06.040  INFO 19708 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Started ApiForShopApplication in 1.644 seconds (JVM running for 2.251)
+2022-03-09 20:18:14.445  INFO 19708 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-09 20:18:14.446  INFO 19708 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-09 20:18:14.447  INFO 19708 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-09 20:18:42.591  INFO 20220 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Starting ApiForShopApplication using Java 15.0.1 on DESKTOP-SKH4LEI with PID 20220 (C:\Users\vladb\IdeaProjects\apiForShop\target\classes started by vladb in C:\Users\vladb\IdeaProjects\apiForShop)
+2022-03-09 20:18:42.593  INFO 20220 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-03-09 20:18:42.630  INFO 20220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-09 20:18:42.630  INFO 20220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-09 20:18:43.385  INFO 20220 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-03-09 20:18:43.393  INFO 20220 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-09 20:18:43.394  INFO 20220 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-09 20:18:43.462  INFO 20220 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-09 20:18:43.463  INFO 20220 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 833 ms
+2022-03-09 20:18:43.721  WARN 20220 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-03-09 20:18:43.768  INFO 20220 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-09 20:18:43.795  INFO 20220 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-03-09 20:18:43.803  INFO 20220 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Started ApiForShopApplication in 1.544 seconds (JVM running for 2.128)
+2022-03-09 20:18:53.430  INFO 20220 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-09 20:18:53.430  INFO 20220 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-09 20:18:53.431  INFO 20220 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-09 20:24:12.729  INFO 3568 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Starting ApiForShopApplication using Java 15.0.1 on DESKTOP-SKH4LEI with PID 3568 (C:\Users\vladb\IdeaProjects\apiForShop\target\classes started by vladb in C:\Users\vladb\IdeaProjects\apiForShop)
+2022-03-09 20:24:12.731  INFO 3568 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-03-09 20:24:12.780  INFO 3568 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-09 20:24:12.780  INFO 3568 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-09 20:24:13.573  INFO 3568 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-03-09 20:24:13.580  INFO 3568 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-09 20:24:13.580  INFO 3568 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-09 20:24:13.652  INFO 3568 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-09 20:24:13.652  INFO 3568 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 871 ms
+2022-03-09 20:24:13.914  WARN 3568 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-03-09 20:24:13.964  INFO 3568 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-09 20:24:13.991  INFO 3568 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-03-09 20:24:13.999  INFO 3568 --- [restartedMain] c.b.apiforshop.ApiForShopApplication     : Started ApiForShopApplication in 1.588 seconds (JVM running for 2.151)
+2022-03-09 20:24:23.771  INFO 3568 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-09 20:24:23.771  INFO 3568 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-09 20:24:23.772  INFO 3568 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-09 20:27:37.803 ERROR 3568 --- [task-2] c.b.a.module.privat.PrivatBankClient     : Problem with PrivatBankClient: javax.net.ssl.SSLException: Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера

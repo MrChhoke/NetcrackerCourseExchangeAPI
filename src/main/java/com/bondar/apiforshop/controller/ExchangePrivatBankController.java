@@ -5,6 +5,7 @@ import com.bondar.apiforshop.module.CurrencyList;
 import com.bondar.apiforshop.service.CurrencyNBUdto;
 import com.bondar.apiforshop.service.CurrencyService;
 import com.bondar.apiforshop.service.PrivatBankDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -20,6 +21,7 @@ import java.util.concurrent.TimeoutException;
 
 @RestController
 @RequestMapping("/privatbank")
+@Slf4j
 public class ExchangePrivatBankController {
 
     @Value("${wait.time.out.second}")
@@ -40,7 +42,8 @@ public class ExchangePrivatBankController {
         try {
             currencyList = currencyService.getCurrencyFromPrivat().get(timeOutSecond, TimeUnit.SECONDS);
         } catch (InterruptedException | TimeoutException | ExecutionException e) {
-            e.printStackTrace();
+            log.error("Problem with ExchangePrivatBankController: " + e);
+            return new ResponseEntity(null,httpHeaders,HttpStatus.REQUEST_TIMEOUT);
         }
         return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
@@ -57,7 +60,8 @@ public class ExchangePrivatBankController {
         try {
             currencyList = currencyService.getBestCurrencyLastWeekFromPrivat().get(timeOutSecond, TimeUnit.SECONDS);
         } catch (InterruptedException | TimeoutException | ExecutionException e) {
-            e.printStackTrace();
+            log.error("Problem with ExchangePrivatBankController: " + e);
+            return new ResponseEntity(null,httpHeaders,HttpStatus.REQUEST_TIMEOUT);
         }
         return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
@@ -74,7 +78,8 @@ public class ExchangePrivatBankController {
         try {
             currencyList = currencyService.getBestCurrencyLastMonthFromPrivat().get(timeOutSecond, TimeUnit.SECONDS);
         } catch (InterruptedException | TimeoutException | ExecutionException e) {
-            e.printStackTrace();
+            log.error("Problem with ExchangePrivatBankController: " + e);
+            return new ResponseEntity(null,httpHeaders,HttpStatus.REQUEST_TIMEOUT);
         }
         return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }

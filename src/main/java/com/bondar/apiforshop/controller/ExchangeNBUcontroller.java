@@ -42,7 +42,8 @@ public class ExchangeNBUcontroller {
         try {
             currencyList = currencyService.getCurrencyFromNBU().get(timeOutSecond, TimeUnit.SECONDS);
         } catch (InterruptedException | TimeoutException | ExecutionException e) {
-            e.printStackTrace();
+            log.error("Problem with ExchangeNBUcontroller: " + e);
+            return new ResponseEntity(null,httpHeaders,HttpStatus.REQUEST_TIMEOUT);
         }
         return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
@@ -59,7 +60,8 @@ public class ExchangeNBUcontroller {
         try {
             currencyList = currencyService.getBestCurrencyLastWeekFromNBU().get(timeOutSecond, TimeUnit.SECONDS);
         } catch (InterruptedException | TimeoutException | ExecutionException e) {
-            e.printStackTrace();
+            log.error("Problem with ExchangeNBUcontroller: " + e);
+            return new ResponseEntity(null,httpHeaders,HttpStatus.REQUEST_TIMEOUT);
         }
         return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
@@ -76,7 +78,8 @@ public class ExchangeNBUcontroller {
         try {
             currencyList = currencyService.getBestCurrencyLastMonthFromNBU().get(timeOutSecond, TimeUnit.SECONDS);
         } catch (InterruptedException | TimeoutException | ExecutionException e) {
-            e.printStackTrace();
+            log.error("Problem with ExchangeNBUcontroller: " + e);
+            return new ResponseEntity(null,httpHeaders,HttpStatus.REQUEST_TIMEOUT);
         }
         return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
