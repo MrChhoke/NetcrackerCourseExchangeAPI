@@ -5,12 +5,11 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.concurrent.Future;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 @Data
@@ -24,17 +23,17 @@ public class CurrencyService {
     private PrivatBankDTO privatBankDTO;
 
     @Async
-    public Future<CurrencyList> getCurrencyFromPrivat(){
-        return new AsyncResult<>(CurrencyList.currencyListFromCurrencyListPrivat(privatBankDTO.getCurrentCurrencyFromXML()));
+    public CompletableFuture<CurrencyList> getCurrencyFromPrivat(){
+        return CompletableFuture.completedFuture(CurrencyList.currencyListFromCurrencyListPrivat(privatBankDTO.getCurrentCurrencyFromXML()));
     }
 
     @Async
-    public Future<CurrencyList> getCurrencyFromNBU(){
-        return new AsyncResult<>(CurrencyList.currencyListFromCurrencyListNBU(currencyNBUdto.getCurrencyNow()));
+    public CompletableFuture<CurrencyList> getCurrencyFromNBU(){
+        return CompletableFuture.completedFuture(CurrencyList.currencyListFromCurrencyListNBU(currencyNBUdto.getCurrencyNow()));
     }
 
     @Async
-    public Future<CurrencyList> getBestCurrencyLastWeekFromPrivat() {
+    public CompletableFuture<CurrencyList> getBestCurrencyLastWeekFromPrivat() {
         CurrencyList list = null;
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -56,11 +55,11 @@ public class CurrencyService {
             }
             calendar.add(Calendar.DATE, 1);
         }
-        return new AsyncResult<>(list);
+        return CompletableFuture.completedFuture(list);
     }
 
     @Async
-    public Future<CurrencyList> getBestCurrencyLastWeekFromNBU() {
+    public CompletableFuture<CurrencyList> getBestCurrencyLastWeekFromNBU() {
         CurrencyList list = null;
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -80,11 +79,11 @@ public class CurrencyService {
             }
             calendar.add(Calendar.DATE, 1);
         }
-        return new AsyncResult<>(list);
+        return CompletableFuture.completedFuture(list);
     }
 
     @Async
-    public Future<CurrencyList> getBestCurrencyLastMonthFromPrivat(){
+    public CompletableFuture<CurrencyList> getBestCurrencyLastMonthFromPrivat(){
         CurrencyList list = null;
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -107,11 +106,11 @@ public class CurrencyService {
             }
             calendar.add(Calendar.DATE, 1);
         }
-        return new AsyncResult<>(list);
+        return CompletableFuture.completedFuture(list);
     }
 
     @Async
-    public Future<CurrencyList> getBestCurrencyLastMonthFromNBU(){
+    public CompletableFuture<CurrencyList> getBestCurrencyLastMonthFromNBU(){
         CurrencyList list = null;
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -132,6 +131,6 @@ public class CurrencyService {
             }
             calendar.add(Calendar.DATE, 1);
         }
-        return new AsyncResult<>(list);
+        return CompletableFuture.completedFuture(list);
     }
 }

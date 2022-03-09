@@ -5,17 +5,27 @@ import com.bondar.apiforshop.module.CurrencyList;
 import com.bondar.apiforshop.service.CurrencyNBUdto;
 import com.bondar.apiforshop.service.CurrencyService;
 import com.bondar.apiforshop.service.PrivatBankDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 
 @RestController
 @RequestMapping("/nbu")
+@Slf4j
 public class ExchangeNBUcontroller {
+
+    @Value("${wait.time.out.second}")
+    private int timeOutSecond;
 
     @Autowired
     private CurrencyService currencyService;
@@ -28,7 +38,13 @@ public class ExchangeNBUcontroller {
             httpHeaders.setContentType(MediaType.APPLICATION_XML);
         else
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity(currencyService.getCurrencyFromNBU(), httpHeaders, HttpStatus.OK);
+        CurrencyList currencyList = null;
+        try {
+            currencyList = currencyService.getCurrencyFromNBU().get(timeOutSecond, TimeUnit.SECONDS);
+        } catch (InterruptedException | TimeoutException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
 
     @GetMapping("/best_last_week")
@@ -39,7 +55,13 @@ public class ExchangeNBUcontroller {
             httpHeaders.setContentType(MediaType.APPLICATION_XML);
         else
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity(currencyService.getBestCurrencyLastWeekFromNBU(), httpHeaders, HttpStatus.OK);
+        CurrencyList currencyList = null;
+        try {
+            currencyList = currencyService.getBestCurrencyLastWeekFromNBU().get(timeOutSecond, TimeUnit.SECONDS);
+        } catch (InterruptedException | TimeoutException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
 
     @GetMapping("/best_last_month")
@@ -50,7 +72,13 @@ public class ExchangeNBUcontroller {
             httpHeaders.setContentType(MediaType.APPLICATION_XML);
         else
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity(currencyService.getBestCurrencyLastMonthFromNBU(), httpHeaders, HttpStatus.OK);
+        CurrencyList currencyList = null;
+        try {
+            currencyList = currencyService.getBestCurrencyLastMonthFromNBU().get(timeOutSecond, TimeUnit.SECONDS);
+        } catch (InterruptedException | TimeoutException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
 
 }

@@ -6,16 +6,24 @@ import com.bondar.apiforshop.service.CurrencyNBUdto;
 import com.bondar.apiforshop.service.CurrencyService;
 import com.bondar.apiforshop.service.PrivatBankDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 
 @RestController
 @RequestMapping("/privatbank")
 public class ExchangePrivatBankController {
+
+    @Value("${wait.time.out.second}")
+    private int timeOutSecond;
 
     @Autowired
     private CurrencyService currencyService;
@@ -28,7 +36,13 @@ public class ExchangePrivatBankController {
             httpHeaders.setContentType(MediaType.APPLICATION_XML);
         else
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity(currencyService.getCurrencyFromPrivat(), httpHeaders, HttpStatus.OK);
+        CurrencyList currencyList = null;
+        try {
+            currencyList = currencyService.getCurrencyFromPrivat().get(timeOutSecond, TimeUnit.SECONDS);
+        } catch (InterruptedException | TimeoutException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
 
     @GetMapping("/best_last_week")
@@ -39,7 +53,13 @@ public class ExchangePrivatBankController {
             httpHeaders.setContentType(MediaType.APPLICATION_XML);
         else
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity(currencyService.getBestCurrencyLastWeekFromPrivat(), httpHeaders, HttpStatus.OK);
+        CurrencyList currencyList = null;
+        try {
+            currencyList = currencyService.getBestCurrencyLastWeekFromPrivat().get(timeOutSecond, TimeUnit.SECONDS);
+        } catch (InterruptedException | TimeoutException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
 
     @GetMapping("/best_last_month")
@@ -50,7 +70,13 @@ public class ExchangePrivatBankController {
             httpHeaders.setContentType(MediaType.APPLICATION_XML);
         else
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity(currencyService.getBestCurrencyLastMonthFromPrivat(), httpHeaders, HttpStatus.OK);
+        CurrencyList currencyList = null;
+        try {
+            currencyList = currencyService.getBestCurrencyLastMonthFromPrivat().get(timeOutSecond, TimeUnit.SECONDS);
+        } catch (InterruptedException | TimeoutException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity(currencyList, httpHeaders, HttpStatus.OK);
     }
 
 }
