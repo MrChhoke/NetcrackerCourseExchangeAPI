@@ -3,6 +3,7 @@ package com.bondar.apiforshop.module.privat;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
@@ -13,6 +14,7 @@ import java.util.Locale;
 
 @Data
 @Component
+@Scope("prototype")
 public class CurrencyPrivatBankList {
     private Date date;
     private String bank;

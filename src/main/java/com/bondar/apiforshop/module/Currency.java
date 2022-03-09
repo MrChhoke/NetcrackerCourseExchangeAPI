@@ -3,10 +3,12 @@ package com.bondar.apiforshop.module;
 import com.bondar.apiforshop.module.nbu.CurrencyNBUitem;
 import com.bondar.apiforshop.module.privat.CurrencyPrivatBankItem;
 import lombok.Data;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 @Data
+@Scope("prototype")
 public class Currency {
     private String name;
     private double buyPriceUAH;

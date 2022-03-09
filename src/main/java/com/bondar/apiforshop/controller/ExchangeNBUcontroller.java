@@ -39,7 +39,7 @@ public class ExchangeNBUcontroller {
             httpHeaders.setContentType(MediaType.APPLICATION_XML);
         else
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity(currencyService.getBestCurrencyLastMonthFromNBU(), httpHeaders, HttpStatus.OK);
+        return new ResponseEntity(currencyService.getBestCurrencyLastWeekFromNBU(), httpHeaders, HttpStatus.OK);
     }
 
     @GetMapping("/best_last_month")

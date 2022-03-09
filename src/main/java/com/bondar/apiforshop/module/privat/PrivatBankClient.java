@@ -5,6 +5,7 @@ import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
 import lombok.Data;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -25,6 +26,7 @@ import java.util.List;
 
 @Component
 @Data
+@Scope("prototype")
 public class PrivatBankClient {
     public CurrencyPrivatBankList getCurrencyByDateFromJSONjackson(Date date) {
         ObjectMapper objectMapper = new ObjectMapper();

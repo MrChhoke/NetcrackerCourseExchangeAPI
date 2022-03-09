@@ -6,6 +6,7 @@ import com.bondar.apiforshop.module.privat.CurrencyPrivatBankItem;
 import com.bondar.apiforshop.module.privat.CurrencyPrivatBankList;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import lombok.Data;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
@@ -17,6 +18,7 @@ import static java.lang.System.out;
 
 @Service
 @Data
+@Scope("prototype")
 public class CurrencyList {
     @JacksonXmlElementWrapper(localName = "listCurrency")
     private List<Currency> currency;

@@ -3,13 +3,18 @@ package com.bondar.apiforshop.service;
 import com.bondar.apiforshop.module.CurrencyList;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.Future;
 
 @Service
 @Data
+@Scope("prototype")
 public class CurrencyService {
 
     @Autowired
@@ -18,15 +23,18 @@ public class CurrencyService {
     @Autowired
     private PrivatBankDTO privatBankDTO;
 
-    public CurrencyList getCurrencyFromPrivat(){
-        return CurrencyList.currencyListFromCurrencyListPrivat(privatBankDTO.getCurrentCurrencyFromXML());
+    @Async
+    public Future<CurrencyList> getCurrencyFromPrivat(){
+        return new AsyncResult<>(CurrencyList.currencyListFromCurrencyListPrivat(privatBankDTO.getCurrentCurrencyFromXML()));
     }
 
-    public CurrencyList getCurrencyFromNBU(){
-        return CurrencyList.currencyListFromCurrencyListNBU(currencyNBUdto.getCurrencyNow());
+    @Async
+    public Future<CurrencyList> getCurrencyFromNBU(){
+        return new AsyncResult<>(CurrencyList.currencyListFromCurrencyListNBU(currencyNBUdto.getCurrencyNow()));
     }
 
-    public CurrencyList getBestCurrencyLastWeekFromPrivat() {
+    @Async
+    public Future<CurrencyList> getBestCurrencyLastWeekFromPrivat() {
         CurrencyList list = null;
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -48,10 +56,11 @@ public class CurrencyService {
             }
             calendar.add(Calendar.DATE, 1);
         }
-        return list;
+        return new AsyncResult<>(list);
     }
 
-    public CurrencyList getBestCurrencyLastWeekFromNBU() {
+    @Async
+    public Future<CurrencyList> getBestCurrencyLastWeekFromNBU() {
         CurrencyList list = null;
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -71,10 +80,11 @@ public class CurrencyService {
             }
             calendar.add(Calendar.DATE, 1);
         }
-        return list;
+        return new AsyncResult<>(list);
     }
 
-    public CurrencyList getBestCurrencyLastMonthFromPrivat(){
+    @Async
+    public Future<CurrencyList> getBestCurrencyLastMonthFromPrivat(){
         CurrencyList list = null;
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -97,10 +107,11 @@ public class CurrencyService {
             }
             calendar.add(Calendar.DATE, 1);
         }
-        return list;
+        return new AsyncResult<>(list);
     }
 
-    public CurrencyList getBestCurrencyLastMonthFromNBU(){
+    @Async
+    public Future<CurrencyList> getBestCurrencyLastMonthFromNBU(){
         CurrencyList list = null;
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -121,6 +132,6 @@ public class CurrencyService {
             }
             calendar.add(Calendar.DATE, 1);
         }
-        return list;
+        return new AsyncResult<>(list);
     }
 }

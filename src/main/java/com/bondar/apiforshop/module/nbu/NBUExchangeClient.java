@@ -1,6 +1,7 @@
 package com.bondar.apiforshop.module.nbu;
 
 import lombok.Data;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,6 +15,7 @@ import java.util.List;
 
 @Component
 @Data
+@Scope("prototype")
 public class NBUExchangeClient {
     private RestTemplate restTemplate = new RestTemplate();
 

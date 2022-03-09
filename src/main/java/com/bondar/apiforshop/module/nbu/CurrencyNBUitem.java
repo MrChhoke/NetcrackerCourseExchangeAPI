@@ -1,6 +1,7 @@
 package com.bondar.apiforshop.module.nbu;
 
 import lombok.Data;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
@@ -10,6 +11,7 @@ import java.util.Locale;
 
 @Component
 @Data
+@Scope("prototype")
 public class CurrencyNBUitem {
     private int r030;
     private String txt;

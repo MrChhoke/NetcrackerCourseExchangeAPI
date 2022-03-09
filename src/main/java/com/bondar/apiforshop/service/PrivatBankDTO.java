@@ -3,11 +3,13 @@ package com.bondar.apiforshop.service;
 import com.bondar.apiforshop.module.privat.CurrencyPrivatBankList;
 import com.bondar.apiforshop.module.privat.PrivatBankClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
 @Service
+@Scope("prototype")
 public class PrivatBankDTO {
 
     @Autowired

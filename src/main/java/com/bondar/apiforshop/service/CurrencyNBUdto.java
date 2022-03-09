@@ -3,6 +3,7 @@ package com.bondar.apiforshop.service;
 import com.bondar.apiforshop.module.nbu.CurrencyNBUlist;
 import com.bondar.apiforshop.module.nbu.NBUExchangeClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
@@ -11,6 +12,7 @@ import java.util.List;
 
 
 @Service
+@Scope("prototype")
 public class CurrencyNBUdto {
 
     @Autowired
