@@ -3,6 +3,7 @@ package com.bondar.apiforshop.module.privat;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,7 @@ import java.util.Locale;
 @Data
 @Component
 @Scope("prototype")
+@Slf4j
 public class CurrencyPrivatBankList {
     private Date date;
     private String bank;
@@ -27,7 +29,7 @@ public class CurrencyPrivatBankList {
         try {
             this.date = simpleDateFormat.parse(date);
         } catch (ParseException e) {
-            e.printStackTrace();
+            log.error("Problem with CurrencyPrivatBankList: " + e);
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.bondar.apiforshop.module.nbu;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -16,6 +17,7 @@ import java.util.List;
 @Component
 @Data
 @Scope("prototype")
+@Slf4j
 public class NBUExchangeClient {
     private RestTemplate restTemplate = new RestTemplate();
 
@@ -28,7 +30,7 @@ public class NBUExchangeClient {
             List<CurrencyNBUitem> list = new ArrayList<>(Arrays.asList(mass));
             return list;
         } catch (URISyntaxException e) {
-            e.printStackTrace();
+            log.error("Problem with NBUExchangeClient: " + e);
         }
         return null;
     }

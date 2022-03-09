@@ -4,6 +4,7 @@ import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -27,6 +28,7 @@ import java.util.List;
 @Component
 @Data
 @Scope("prototype")
+@Slf4j
 public class PrivatBankClient {
     public CurrencyPrivatBankList getCurrencyByDateFromJSONjackson(Date date) {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -36,7 +38,7 @@ public class PrivatBankClient {
         try {
             return objectMapper.readValue(new URL(url), CurrencyPrivatBankList.class);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Problem with PrivatBankClient: " + e);
         }
         return null;
     }
@@ -77,7 +79,7 @@ public class PrivatBankClient {
             }
             privatBankList.setExchangeRate(list);
         } catch (SAXException | ParserConfigurationException | IOException e) {
-            e.printStackTrace();
+            log.error("Problem with PrivatBankClient: " + e);
         }
         return privatBankList;
     }
@@ -113,7 +115,7 @@ public class PrivatBankClient {
             privatBankList.setExchangeRate(list);
             return privatBankList;
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Problem with PrivatBankClient: " + e);
         }
         return null;
     }
