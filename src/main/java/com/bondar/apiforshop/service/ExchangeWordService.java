@@ -8,13 +8,14 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.text.SimpleDateFormat;
+
+import static java.lang.System.in;
 
 @Service
 @Slf4j
 public class ExchangeWordService {
 
-    public static void getExchangeRateWord(CurrencyList currencyList){
+    public static File getExchangeRateWord(CurrencyList currencyList){
         try (   FileInputStream fis = new FileInputStream(new File("template/template.docx").getAbsolutePath());
                 XWPFDocument document = new XWPFDocument(fis)){
             int i = -1;
@@ -23,7 +24,6 @@ public class ExchangeWordService {
                 for (XWPFRun run : paragraph.getRuns()) {
                     String text = run.getText(0);
                     if(!isDate) {
-                        System.out.println(i);
                         text = text.replace("{name}", currencyList.getCurrency().get(i).getName());
                         text = text.replace("{buy}", String.valueOf(currencyList.getCurrency().get(i).getBuyPriceUAH()));
                         text = text.replace("{sold}", String.valueOf(currencyList.getCurrency().get(i).getSoldPriceUAH()));
@@ -35,11 +35,16 @@ public class ExchangeWordService {
                 isDate = false;
                 ++i;
             }
+            File file = new File("template/output.docx");
+            if(file.exists()) file.delete();
             try (OutputStream out = new FileOutputStream("template/output.docx")) {
                 document.write(out);
             }
+            file = new File("template/output.docx");
+            return file;
         } catch (IOException e) {
             log.error("Problems with ExchangeWordService: " + e);
         }
+        return null;
     }
 }
