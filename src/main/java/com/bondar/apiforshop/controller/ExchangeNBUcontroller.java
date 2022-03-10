@@ -4,6 +4,7 @@ package com.bondar.apiforshop.controller;
 import com.bondar.apiforshop.module.CurrencyList;
 import com.bondar.apiforshop.service.CurrencyNBUdto;
 import com.bondar.apiforshop.service.CurrencyService;
+import com.bondar.apiforshop.service.ExchangeWordService;
 import com.bondar.apiforshop.service.PrivatBankDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class ExchangeNBUcontroller {
             httpHeaders.setContentType(MediaType.APPLICATION_XML);
         else
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        CurrencyList currencyList = null;
+        CurrencyList currencyList;
         try {
             currencyList = currencyService.getCurrencyFromNBU().get(timeOutSecond, TimeUnit.SECONDS);
         } catch (InterruptedException | TimeoutException | ExecutionException e) {
@@ -56,7 +57,7 @@ public class ExchangeNBUcontroller {
             httpHeaders.setContentType(MediaType.APPLICATION_XML);
         else
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        CurrencyList currencyList = null;
+        CurrencyList currencyList;
         try {
             currencyList = currencyService.getBestCurrencyLastWeekFromNBU().get(timeOutSecond, TimeUnit.SECONDS);
         } catch (InterruptedException | TimeoutException | ExecutionException e) {
@@ -74,7 +75,7 @@ public class ExchangeNBUcontroller {
             httpHeaders.setContentType(MediaType.APPLICATION_XML);
         else
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        CurrencyList currencyList = null;
+        CurrencyList currencyList;
         try {
             currencyList = currencyService.getBestCurrencyLastMonthFromNBU().get(timeOutSecond, TimeUnit.SECONDS);
         } catch (InterruptedException | TimeoutException | ExecutionException e) {
