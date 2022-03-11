@@ -108,6 +108,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>ExchangeAPI</finalName>
     </build>
 
 </project>
